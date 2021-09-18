@@ -2,7 +2,6 @@ const Backup = require("./getBackup")
 const schedule = require('node-schedule');
 
 schedule.scheduleJob('1 * * * * *', function () {
-    console.log("get back up");
-    const db_backup = new Backup("/run/media/blue-day/0day/MyProject/Coimex/apps/repos")
+    const db_backup = new Backup(PATH_TO_YOUR_FILE_NEED_TO_BACKUP)
     db_backup.exportMongoDB()
 });
