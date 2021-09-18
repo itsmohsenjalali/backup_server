@@ -43,7 +43,7 @@ class Backup {
         })
     }
     async convertToZip() {
-        const res = await exec(`zip -r ./backup/${this.backupFilename}.zip ./backup/${this.backupFilename}`, (error, stdout, stderr) => {
+        const res = await exec(`tar -czvf ./backup/${this.backupFilename}.tar.gz ./backup/${this.backupFilename}`, (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
                 return;
